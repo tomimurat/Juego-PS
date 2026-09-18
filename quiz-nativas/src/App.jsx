@@ -318,7 +318,7 @@ const E = {
   brea: ["Brea", "Parkinsonia praecox"],
   paloTinta: ["Palo tinta", "Achatocarpus praecox"],
   espinilloNegro: ["Espinillo negro", "Vachellia atramentaria"],
-  mato: ["Mato", "Myrcianthes cisplatensis"],
+  mato: ["Guayabo colorado", "Myrcianthes cisplatensis"],
   quebrachoColorado: ["Quebracho colorado", "Schinopsis lorentzii"],
   calden: ["Caldén", "Neltuma caldenia"],
   algarroboChileno: ["Algarrobo chileno", "Neltuma chilensis"],
@@ -335,14 +335,14 @@ const E = {
   jarilla: ["Jarilla", "Larrea divaricata", "arbusto"],
   romerillo: ["Romerillo", "Heterothalamus alienus", "arbusto"],
   carqueja: ["Carqueja", "Baccharis trimera", "arbusto"],
-  duraznillo: ["Duraznillo negro", "Cestrum parqui", "arbusto"],
+  duraznillo: ["Hediondillo", "Cestrum parqui", "arbusto"],
 
   // ---------- enredaderas ----------
   sachaGuasca: ["Sacha guasca", "Dolichandra cynanchoides", "enredadera"],
-  peineMono: ["Peine de mono", "Amphilophium cynanchoides", "enredadera"],
+  peineMono: ["Peine de mono", "Amphilophium carolinae", "enredadera"],
   pasionaria: ["Pasionaria", "Passiflora caerulea", "enredadera"],
-  ipomea: ["Ipomea", "Ipomoea stuckertii", "enredadera"],
-  florPatito: ["Flor de patito", "Aristolochia argentina", "enredadera"],
+  ipomea: ["Dama de noche", "Ipomoea alba", "enredadera"],
+  florPatito: ["Flor de patito", "Aristolochia fimbriata", "enredadera"],
   unaGato: ["Uña de gato", "Dolichandra unguis-cati", "enredadera"],
   tasi: ["Tasi", "Araujia odorata", "enredadera"],
   cabelloAngel: ["Cabello de ángel", "Clematis montevidensis", "enredadera"],
@@ -355,7 +355,7 @@ const E = {
   poleo: ["Poleo", "Lippia turbinata", "herbácea"],
   suico: ["Suico", "Tagetes minuta", "herbácea"],
   tabacoMonte: ["Tabaco del monte", "Trixis praestans", "herbácea"],
-  malvaBlanca: ["Malva blanca", "Sphaeralcea bonariensis", "herbácea"],
+  malvaBlanca: ["Malvavisco salmón", "Sphaeralcea bonariensis", "herbácea"],
   marcela: ["Marcela", "Achyrocline satureioides", "herbácea"],
 };
 
@@ -517,7 +517,7 @@ const POOL = [
     tipo: "Copa cónica de ramas colgantes, follaje perenne", altura: "hasta 20 m",
     magnitud: 1, eco: ["Chaco Seco", "Espinal"],
     pistas: ["No pierde las hojas nunca: en julio está igual que en enero.", "Las hojas salen de a tres y terminan en punta. Pinchan.", "Si le cortás una rama sale un líquido blanco, como leche.", "El fruto parece un coquito de madera y adentro tiene semillas con alita."],
-    conciencia: "Tarda décadas en hacerse grande y con su madera se hicieron los postes de todos los alambrados de la provincia, el carbón de todos los asados y los durmientes del ferrocarril. Tardó ochenta años en crecer y tarda dos horas en caer.",
+    conciencia: "Tarda décadas en hacerse grande y con su madera se hicieron las varillas de los alambrados de la provincia y el carbón de los asados, que no chispea. Los durmientes del ferrocarril salieron sobre todo de su pariente, el quebracho colorado. Tardó ochenta años en crecer y tarda dos horas en caer.",
     huerta: "No va en una huerta chica, pero sostiene el monte que la rodea: sombra profunda y freno al viento seco.",
     distractores: ["orcoQuebracho", "coco", "mistol", "guayacan", "quebrachoColorado", "paloCruz"],
     dibujo: { copa: "conica", verdes: ["#1f6b46", "#2a8354", "#379a62"], tronco: "recto", corteza: "#8a7257", extra: "semilla" },
@@ -526,7 +526,7 @@ const POOL = [
     clave: "orcoQuebracho", nivel: 5, ex: null, familia: "Anacardiaceae",
     tipo: "Árbol de copa oscura y madera durísima", altura: "hasta 15 m",
     magnitud: 1, eco: ["Chaco Seco", "Espinal"],
-    pistas: ["Este vive casi solamente en las sierras del centro del país. Es nuestro.", "Su nombre empieza con una palabra quechua que significa cerro.", "La madera es tan pesada que se hunde en el agua."],
+    pistas: ["Este vive casi solamente en las sierras del centro del país. Es nuestro.", "Su nombre empieza con una palabra quechua que significa cerro.", "Es tan duro que postes de alambrado de hace un siglo siguen parados."],
     conciencia: "Es prácticamente exclusivo de las sierras de Córdoba, San Luis y las provincias vecinas, y fue arrasado para leña y carbón. Cada ejemplar grande que queda en pie es un sobreviviente.",
     huerta: "Crece lentísimo, pero un orco quebracho plantado hoy es un acto para tus nietos, no para vos.",
     distractores: ["quebrachoBlanco", "coco", "molle", "guayacan", "quebrachoColorado", "paloCruz"],
@@ -557,7 +557,7 @@ const POOL = [
     dibujo: { copa: "llorona", verdes: ["#3f8a46", "#57a851", "#72bf60"], tronco: "recto", corteza: "#8a7257", adorno: { forma: "baya", color: "#e8617f", cantidad: 6 } },
   },
   {
-    clave: "pasionaria", nivel: 1, ex: null, familia: "Passifloraceae",
+    clave: "pasionaria", nivel: 1, ex: null, alias: "mburucuyá", familia: "Passifloraceae",
     tipo: "Trepadora con zarcillos, de flor grande y compleja",
     porte: "Trepadora: sube 3 a 6 m sobre cualquier soporte.",
     eco: ["Espinal", "Chaco Seco"],
@@ -568,7 +568,7 @@ const POOL = [
     dibujo: { forma: "enredadera", verdes: ["#3f9a4a", "#57b855", "#71cc66"], adorno: { forma: "flor", color: "#b47ad6", cantidad: 5 } },
   },
   {
-    clave: "laganaPerro", nivel: 1, ex: "ex Caesalpinia gilliesii", familia: "Fabaceae",
+    clave: "laganaPerro", nivel: 1, ex: "ex Caesalpinia gilliesii", alias: "barba de chivo", familia: "Fabaceae",
     tipo: "Arbusto abierto, sin espinas, de crecimiento rápido",
     porte: "Arbusto de 2 a 3 m. Entra en vereda angosta, cantero o maceta grande.",
     eco: ["Chaco Seco", "Espinal"],
@@ -591,7 +591,7 @@ const POOL = [
     dibujo: { copa: "redonda", verdes: ["#4a9c45", "#63b552", "#7ccc62"], tronco: "multiple", corteza: "#7d6248", adorno: { forma: "pompon", color: "#ffd028", cantidad: 6 } },
   },
   {
-    clave: "sachaGuasca", nivel: 2, ex: null, familia: "Bignoniaceae",
+    clave: "sachaGuasca", nivel: 2, ex: null, alias: "sacha huasca", familia: "Bignoniaceae",
     tipo: "Liana leñosa perenne, de tallos flexibles y verrugosos",
     porte: "Trepadora: sube de 4 a 10 m sobre árboles, cercos o alambrados.",
     eco: ["Chaco Seco", "Espinal"],
@@ -602,7 +602,7 @@ const POOL = [
     dibujo: { forma: "enredadera", verdes: ["#2f8038", "#489a42", "#61b252"], adorno: { forma: "flor", color: "#e0356b", cantidad: 6 } },
   },
   {
-    clave: "peineMono", nivel: 2, ex: "ex Pithecoctenium cynanchoides", familia: "Bignoniaceae",
+    clave: "peineMono", nivel: 2, ex: "ex Pithecoctenium cynanchoides", alias: "sacha esponja", familia: "Bignoniaceae",
     tipo: "Liana leñosa con zarcillos y fruto espinoso",
     porte: "Trepadora: cubre 3 a 8 m de cerco o de copa ajena.",
     eco: ["Chaco Seco", "Espinal"],
@@ -658,7 +658,7 @@ const POOL = [
     dibujo: { copa: "rala", verdes: ["#357f3d", "#4d9a47", "#66b156"], tronco: "multiple", corteza: "#6f5540", espinas: true, adorno: { forma: "pompon", color: "#f2ecc4", cantidad: 5 } },
   },
   {
-    clave: "paloAmarillo", nivel: 4, ex: null, familia: "Verbenaceae",
+    clave: "paloAmarillo", nivel: 4, ex: null, alias: "cedrón de monte", familia: "Verbenaceae",
     tipo: "Arbusto muy ramoso y aromático",
     porte: "Arbusto de 1 a 3 m. Entra en cualquier borde de huerta.",
     eco: ["Chaco Seco", "Espinal"],
@@ -669,15 +669,15 @@ const POOL = [
     dibujo: { forma: "arbusto", verdes: ["#5a9a45", "#74b154", "#8cc766"], corteza: "#9a8a52", adorno: { forma: "baya", color: "#f7f2df", cantidad: 7 } },
   },
   {
-    clave: "ipomea", nivel: 4, ex: null, familia: "Convolvulaceae",
-    tipo: "Trepadora de tallo fino y flor en campanilla",
-    porte: "Trepadora: 2 a 4 m por temporada, muere arriba en invierno.",
+    clave: "ipomea", nivel: 4, ex: null, alias: "ipomea", familia: "Convolvulaceae",
+    tipo: "Trepadora de tallo fino y flor blanca en trompeta",
+    porte: "Trepadora: 3 a 5 m por temporada; se seca arriba en invierno.",
     eco: ["Chaco Seco", "Espinal"],
-    pistas: ["Esta abre la flor a la mañana temprano y la cierra al mediodía.", "La flor es una campana lisa, entera, sin pétalos separados.", "Hay muchísimas parecidas y cuesta diferenciarlas: por eso está entre las difíciles."],
-    conciencia: "Las campanillas nativas son alimento temprano para abejas y abejorros, que las visitan en las pocas horas que la flor está abierta. Cuidado: varias especies del género son exóticas invasoras, así que conviene confirmar el origen del plantín antes de plantarlo.",
-    huerta: "Cubre rápido y muere en invierno, así que da sombra estacional sobre el cantero sin taparlo todo el año.",
+    pistas: ["Esta abre la flor cuando se pone el sol y la cierra al amanecer.", "La flor es blanca, enorme, de hasta quince centímetros, con forma de trompeta.", "El perfume es dulce y fuerte, y se siente de noche desde lejos."],
+    conciencia: "Abre de noche porque la poliniza una mariposa nocturna de trompa larguísima, la única que llega al fondo de esa flor. El perfume y el blanco son señales para un visitante que en la oscuridad no distingue colores.",
+    huerta: "Cubre un cerco en una sola temporada y perfuma el patio justo a la hora en que uno se sienta afuera.",
     distractores: ["pasionaria", "sachaGuasca", "florPatito", "cabelloAngel", "zarzaparrilla", "isipo"],
-    dibujo: { forma: "enredadera", verdes: ["#4a9c45", "#63b552", "#7ccc62"], adorno: { forma: "flor", color: "#8f6fd6", cantidad: 6 } },
+    dibujo: { forma: "enredadera", verdes: ["#4a9c45", "#63b552", "#7ccc62"], adorno: { forma: "flor", color: "#fbf7ea", cantidad: 6 } },
   },
 
   /* ---------- NIVEL 5 ---------- */
@@ -703,8 +703,8 @@ const POOL = [
   },
   {
     clave: "florPatito", nivel: 5, ex: null, familia: "Aristolochiaceae",
-    tipo: "Trepadora de flor tubular curvada",
-    porte: "Trepadora chica: 1 a 3 m, se seca arriba en invierno.",
+    tipo: "Trepadora chica de flor tubular curvada",
+    porte: "Trepadora baja: 30 a 80 cm, se seca arriba en invierno.",
     eco: ["Chaco Seco", "Espinal"],
     pistas: ["La flor de esta parece un patito, o un buche de pavo, según a quién le preguntes.", "Es un tubo curvo que termina en una boca abierta, de color pardo violáceo.", "Es la única comida que aceptan las orugas de todo un grupo de mariposas."],
     conciencia: "Es hospedera exclusiva de las mariposas del género Battus. Ojo con una trampa frecuente: la flor de patito exótica que se vende en muchos viveros atrae a las mariposas a poner huevos, pero las orugas mueren al comerla. Confirmá siempre que el plantín sea de la especie nativa.",
@@ -1236,7 +1236,7 @@ export default function JuegoArbolesNativos() {
             <h1 className="atrTitulo">¿Conocés<em>tus nativas?</em></h1>
             <div className="vidriera"><Dibujo d={POOL[vidriera].dibujo} /></div>
             <p style={{ fontSize: "clamp(15px,2.2vw,20px)", fontWeight: 800, opacity: 0.92, margin: "10px 0 0" }}>
-              Treinta nativas de Córdoba. Demostrá tu conocimiento.
+              Treinta nativas de Córdoba. Cada partida es distinta.
             </p>
             <button className="llamada" onClick={(e) => { e.stopPropagation(); empezar(); }}>Tocá para jugar</button>
             <p className="ayudaTeclas">
@@ -1375,6 +1375,7 @@ export default function JuegoArbolesNativos() {
                 <p className="sciGrande">
                   {arbol.cientifico}
                   {arbol.ex && <span style={{ fontStyle: "normal", opacity: 0.75 }}> · {arbol.ex}</span>}
+                  {arbol.alias && <span style={{ fontStyle: "normal", opacity: 0.75 }}> · también le dicen {arbol.alias}</span>}
                   <span style={{ fontStyle: "normal", opacity: 0.75 }}> · {arbol.familia}</span>
                 </p>
                 {[
