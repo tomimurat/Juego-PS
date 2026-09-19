@@ -16,6 +16,10 @@ const TEMA = {
 const TRAZO = "#2d2318";
 const SEG_POR_RONDA = 15;
 
+/* Fotos: public/arboles/<clave>.<ext>. Se prueban estas extensiones en orden
+   y, si ninguna carga, la ronda usa la ilustración dibujada. */
+const EXTENSIONES = ["jpg", "jpeg", "png", "webp", "JPG", "jpeg"];
+
 /* ===============================================================
    DIBUJO PARAMÉTRICO
    Un renderer para todas las especies. El objeto `dibujo` de cada
@@ -937,6 +941,7 @@ export default function JuegoArbolesNativos() {
   const [historial, setHistorial] = useState([]);
   const [verPistas, setVerPistas] = useState(false);
   const [mudo, setMudo] = useState(false);
+  const [intentoFoto, setIntentoFoto] = useState({}); // clave → extensión que se está probando
   const [restante, setRestante] = useState(SEG_POR_RONDA);
   const [corriendo, setCorriendo] = useState(false);
   const [vidriera, setVidriera] = useState(0);
@@ -1124,6 +1129,7 @@ export default function JuegoArbolesNativos() {
       .tarjeta.bien{box-shadow:0 10px 0 rgba(0,0,0,.2),0 0 0 8px var(--ok);}
       .tarjeta.mal{box-shadow:0 10px 0 rgba(0,0,0,.2),0 0 0 8px var(--rojo);animation:temblar .45s;}
       .ilu{display:block;width:100%;height:auto;}
+      .foto{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;background:#e9e5da;}
       .ilu .copa{transform-origin:150px 250px;animation:mecer 5.5s ease-in-out infinite;}
       .ilu .detalle{animation:respirar 4s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
       .ilu .pompon{transform-origin:center;transform-box:fill-box;animation:respirar 2.6s ease-in-out infinite;}
@@ -1327,8 +1333,23 @@ export default function JuegoArbolesNativos() {
         <div className="tablero">
           <div>
             <div className={`tarjeta ${fase !== "pregunta" ? (acerto ? "bien" : "mal") : ""}`} key={`t${ronda}`}>
-              <Dibujo d={arbol.dibujo} />
-              <p className="pieIlu">{fase === "pregunta" ? "Ilustración de referencia" : arbol.nombre}</p>
+              {(() => {
+                const i = intentoFoto[arbol.clave] ?? 0;
+                if (i >= EXTENSIONES.length) return <Dibujo d={arbol.dibujo} />;
+                return (
+                  <img
+                    className="foto"
+                    src={`/arboles/${arbol.clave}.${EXTENSIONES[i]}`}
+                    alt=""
+                    onError={() => setIntentoFoto((t) => ({ ...t, [arbol.clave]: i + 1 }))}
+                  />
+                );
+              })()}
+              <p className="pieIlu">
+                {fase === "pregunta"
+                  ? ((intentoFoto[arbol.clave] ?? 0) >= EXTENSIONES.length ? "Ilustración de referencia" : "Foto de referencia")
+                  : arbol.nombre}
+              </p>
             </div>
 
             {fase === "pregunta" && (
